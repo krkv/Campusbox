@@ -1,2 +1,3 @@
 # Campusbox
-Bringing products to students the way it has never been done before.
+Campusbox is a trading platform for students.
+Campusbox is under development at University of Tartu.
