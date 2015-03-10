@@ -8,7 +8,9 @@
 	<title>Campusbox</title>
 
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/css/home.css" rel="stylesheet">
+	<link href="/css/campusbox.css" rel="stylesheet">
+
+    <script src="https://apis.google.com/js/client:platform.js" async defer></script>
 
 	<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
 	<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->

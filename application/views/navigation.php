@@ -11,7 +11,7 @@
 			    <span class="icon-bar"></span>
 		    </button>
 			        
-            <a class="navbar-brand" href="#">Campusbox</a>
+            <a class="navbar-brand" href="/">Campusbox</a>
 
 		</div>
 
@@ -19,14 +19,18 @@
 			    
             <form class="navbar-form navbar-left">
 			    <div class="form-group">
-				    <input type="text" placeholder="Search" class="form-control">
+                    <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></div>
+				        <input type="text" placeholder="Search" class="form-control">
+                    </div>
 			    </div>
-                <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
 			</form>
 
-            <form class="navbar-form navbar-right">
-			    <button type="submit" class="btn btn-default">Sign in</button>
-			</form>
+            <div class="navbar-form navbar-right">
+
+			    <div class="btn btn-default">Sign in</div>
+
+            </div>
 
 		</div><!--/.navbar-collapse -->
 

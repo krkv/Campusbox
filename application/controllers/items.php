@@ -37,7 +37,7 @@ class Items extends CI_Controller {
         $this->load->helper('form');
 	    $this->load->library('form_validation');
         
-        $this->form_validation->set_rules('title', 'Title', 'required');
+        $this->form_validation->set_rules('title', 'item title', 'required');
 
         if ($this->form_validation->run() === FALSE)
 	    {

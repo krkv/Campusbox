@@ -3,7 +3,7 @@
             <hr>
 
 		    <footer>
-		        <p>&copy; Campusbox 2015</p>
+		        <p>&copy; Campusbox 2015. Campusbox is under development at University of Tartu.</p>
 		    </footer>
 
 	    </div> <!-- /container -->
