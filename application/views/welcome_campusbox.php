@@ -6,6 +6,6 @@
     <title>Welcome | Campusbox</title>
 </head>
 <body>    
-    <img width="25%" src="/images/logo.png" alt="Campusbox logo">
+    <img width="300" src="/images/logo.png" alt="Campusbox logo">
 </body>
 </html>

@@ -45,7 +45,7 @@
 			            <span class="icon-bar"></span>
 			        </button>
 			        
-                    <a class="navbar-brand" href="#">Campusbox</span></a>
+                    <a class="navbar-brand" href="#">Campusbox</a>
 
 		        </div>
 
