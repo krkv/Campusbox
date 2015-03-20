@@ -55,7 +55,7 @@
 
                     <div class="navbar-form navbar-right">
 
-			            <div class="btn btn-default">Sign in</div>
+			            <a class="btn btn-default" href="/index.php/users/add" role="button">Sign up</a>
 
                     </div>
 

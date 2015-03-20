@@ -53,7 +53,4 @@ class Items extends CI_Controller {
 	}
 }
 
-/* End of file items.php */
-/* Location: ./application/controllers/items.php */
-
 ?>

@@ -21,7 +21,6 @@ class Items_model extends CI_Model {
     public function set_item()
     {
 	    $data = array(
-            'id' => $this->input->post('id'),
 		    'title' => $this->input->post('title'),
 		    'description' => $this->input->post('description')
 	    );
