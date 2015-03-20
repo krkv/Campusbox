@@ -12,9 +12,16 @@ class Items_model extends CI_Model {
 		return $query->result_array();
     }
 
+    public function get_item($id)
+    {
+		$query = $this->db->get_where('item', array('id' => $id));
+		return $query->row_array();
+    }
+
     public function set_item()
     {
 	    $data = array(
+            'id' => $this->input->post('id'),
 		    'title' => $this->input->post('title'),
 		    'description' => $this->input->post('description')
 	    );
