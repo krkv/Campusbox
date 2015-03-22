@@ -32,6 +32,11 @@ class Items extends CI_Controller {
 
     public function add()
 	{
+        if (!$this->session->userdata('user_id'))
+        {
+            redirect('users/add');
+        }
+
         $this->load->helper('form');
 	    $this->load->library('form_validation');
         
@@ -51,6 +56,7 @@ class Items extends CI_Controller {
             $this->load->view('footer');
 	    }
 	}
+
 }
 
 ?>

@@ -55,7 +55,23 @@
 
                     <div class="navbar-form navbar-right">
 
-			            <a class="btn btn-default" href="/index.php/users/add" role="button">Sign up</a>
+                        <?php if ($this->session->userdata('user_id')): ?>
+
+                        <div class="form-group">
+			                <a class="btn btn-default" href="/index.php/users/logout" role="button">Log out</a>
+                        </div>
+
+                        <?php else: ?>
+
+                        <div class="form-group">
+			                <a class="btn btn-default" href="/index.php/users/add" role="button">Sign up</a>
+                        </div>
+
+                        <div class="form-group">
+			                <a class="btn btn-default" href="/index.php/users/login" role="button">Log in</a>
+                        </div>
+
+                        <?php endif; ?>
 
                     </div>
 
