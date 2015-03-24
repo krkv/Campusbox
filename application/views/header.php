@@ -7,7 +7,7 @@
 
 	<title>Campusbox</title>
 
-	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap.css" rel="stylesheet">
 	<link href="/css/campusbox.css" rel="stylesheet">
 
     <script src="/js/campusbox.js"></script>
