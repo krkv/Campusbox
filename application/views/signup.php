@@ -2,7 +2,7 @@
 
     <div class="container text-center">
 
-        <h1 class="page-header text-center">Sign up</h1>
+        <h1 class="page-header">Sign up</h1>
 
         <?php echo form_open('signup/index') ?>
             

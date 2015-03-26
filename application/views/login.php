@@ -2,7 +2,7 @@
 
     <div class="container text-center">
 
-        <h1 class="page-header text-center">Log in</h1>
+        <h1 class="page-header">Log in</h1>
 
         <?php echo form_open('login/verify') ?>
             

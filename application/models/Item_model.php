@@ -21,4 +21,13 @@ class Item_model extends CI_Model {
 		return $query->row();
 	}
 
+    public function get_join()
+	{
+        $this->db->select('item.id, item.title, user.name, user.id as user_id');
+		$this->db->from('item');
+        $this->db->join('user', 'user.id = item.userid');
+        $query = $this->db->get();
+        return $query->result();
+	}
+
 }
