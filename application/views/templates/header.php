@@ -8,7 +8,7 @@
 	<title>Campusbox</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="<?php echo base_url("css/bootstrap-paper.css") ?>" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -17,7 +17,8 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-	<link href="/css/campusbox.css" rel="stylesheet">
+	<link href="<?php echo base_url("css/campusbox.css") ?>" rel="stylesheet">
+    <link rel="icon" type="image/png" href="<?php echo base_url("images/favicon.ico") ?>">
 
 	</head>
 
@@ -28,6 +29,8 @@
             <div class="container">		
                 
                 <div class="navbar-header">
+
+                    <a class="navbar-brand" href="<?php echo base_url(index_page()); ?>">Campusbox</a>
 			        
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 			            <span class="sr-only">Toggle navigation</span>
@@ -35,43 +38,54 @@
 			            <span class="icon-bar"></span>
 			            <span class="icon-bar"></span>
 		            </button>
-			        
-                    <a class="navbar-brand" href="/">Campusbox</a>
 
 		        </div>
 
-		        <div id="navbar" class="navbar-collapse collapse">
+		        <div class="collapse navbar-collapse" id="navbar">
 			    
                     <form class="navbar-form navbar-left">
 			            <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></div>
-				                <input type="text" placeholder="Search" class="form-control">
-                            </div>
+				            <input type="text" placeholder="Search" class="form-control">
 			            </div>
 			        </form>
 
-                    <div class="navbar-form navbar-right">
+                    <ul class="nav navbar-nav navbar-right">
 
                         <?php if ($this->session->userdata('user_id')): ?>
 
-                        <div class="form-group">
-			                <a class="btn btn-default" href="/index.php/users/logout" role="button">Log out</a>
-                        </div>
+                        <li>
+                            <a href="<?php echo site_url('user/'.$this->session->userdata('user_id')); ?>" role="button">
+                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                <?php echo $this->session->userdata('user_name'); ?>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="<?php echo site_url('logout'); ?>" role="button">
+                                <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+                                Log out
+                            </a>
+                        </li>
 
                         <?php else: ?>
 
-                        <div class="form-group">
-			                <a class="btn btn-default" href="/index.php/users/add" role="button">Sign up</a>
-                        </div>
+                        <li>
+			                <a href="<?php echo site_url('signup'); ?>" role="button">
+                                <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+                                Sign up
+                            </a>
+                        </li>
 
-                        <div class="form-group">
-			                <a class="btn btn-default" href="/index.php/users/login" role="button">Log in</a>
-                        </div>
+                        <li>
+			                <a href="<?php echo site_url('login'); ?>" role="button">
+                                <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+                                Log in
+                            </a>
+                        </li>
 
                         <?php endif; ?>
 
-                    </div>
+                    </ul>
 
 		        </div><!--/.navbar-collapse -->
 
