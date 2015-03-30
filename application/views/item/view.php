@@ -20,7 +20,7 @@
             
             <?php else: ?>
             
-            <a class="btn btn-warning btn-lg" href="<?php echo site_url('login'); ?>" role="button" title="Contact seller">
+            <a class="btn btn-warning btn-lg" href="<?php echo site_url('user/view/'.$selected_item->userid); ?>" role="button" title="Contact seller">
                 <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
                 Contact seller
             </a>
@@ -30,7 +30,7 @@
         </p>
         
         <p>
-            <a class="btn btn-default btn-lg" href="<?php echo site_url('/'); ?>" role="button" title="Campusbox home">
+            <a class="btn btn-default btn-sm" href="<?php echo site_url('/'); ?>" role="button" title="Campusbox home">
                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
                 Campusbox home
             </a>

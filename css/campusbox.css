@@ -1,6 +1,6 @@
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
-  padding-top: 50px;
+  padding-top: 64px;
 }
 
 .navbar {
@@ -35,4 +35,14 @@ body {
     border-top: none;
     border-bottom: none;
     box-shadow: none;
+}
+
+.white-section {
+    padding-top: 50px;
+    padding-bottom: 27px;
+}
+
+.white-section h1 {
+    margin: 0px;
+    padding: 0px 0px 55px 0px;
 }

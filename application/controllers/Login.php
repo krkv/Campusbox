@@ -13,7 +13,7 @@ class Login extends CI_Controller {
 
     public function index() {
         if ($this->session->userdata('logged_in')) {
-            redirect('/');
+            redirect(base_url(index_page()));
         }
         $this->form_validation->set_rules('email', 'email', 'trim|required');
         $this->form_validation->set_rules('password', 'password', 'trim|required|callback_check_password');
@@ -22,7 +22,13 @@ class Login extends CI_Controller {
             $this->load->view('login');
             $this->load->view('footer');
         } else {
-            redirect('/');
+            if ($this->session->userdata('request')) {
+                $request = $this->session->userdata('request');
+                $this->session->unset_userdata('request');
+                redirect($request);
+            } else {
+                redirect(base_url(index_page()));
+            }
         }
     }
 

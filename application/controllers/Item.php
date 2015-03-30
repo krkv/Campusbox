@@ -41,6 +41,8 @@ class Item extends CI_Controller {
 
     public function add() {
         if (!$this->session->userdata('logged_in')) {
+            $request = uri_string();
+            $this->session->set_userdata('request', $request);
             redirect('login');
         }
         $this->form_validation->set_rules('title', 'title', 'trim|required');

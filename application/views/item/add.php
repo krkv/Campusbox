@@ -16,7 +16,7 @@
             <textarea class="form-control input-lg" rows="3" id="description" name="description" placeholder="Item description"  value="<?php echo set_value('description'); ?>"></textarea>
         </div>
 
-        <div>
+        <div class="form-group col-md-6 col-md-offset-3">
             <?php echo validation_errors(); ?>
         </div>
 

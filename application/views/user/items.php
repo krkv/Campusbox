@@ -1,6 +1,4 @@
-<div class="container">
-
-    <h1 class="page-header text-center">Offers:</h1>
+<div class="container white-section">
 
     <div class="row text-center">
 
