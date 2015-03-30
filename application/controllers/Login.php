@@ -12,6 +12,9 @@ class Login extends CI_Controller {
     }
 
     public function index() {
+        if ($this->session->userdata('logged_in')) {
+            redirect('/');
+        }
         $this->form_validation->set_rules('email', 'email', 'trim|required');
         $this->form_validation->set_rules('password', 'password', 'trim|required|callback_check_password');
         if ($this->form_validation->run() == FALSE) {
@@ -33,6 +36,7 @@ class Login extends CI_Controller {
             $this->session->set_userdata('user_name', $result->name);
             return TRUE;
         } else {
+            $this->form_validation->set_message('check_password', 'Invalid username or password.');
             return FALSE;
         }
     }

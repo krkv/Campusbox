@@ -6,14 +6,18 @@
 
         <?php echo form_open('login/index') ?>
 
-        <div class="form-group <?php if (form_error('email')) {echo 'has-error has-feedback';} ?> col-md-4 col-md-offset-2">
+        <div class="form-group <?php if (form_error('email')) {echo 'has-error has-feedback';} ?> col-md-6 col-md-offset-3">
             <label class="sr-only control-label" for="email">E-mail</label>
             <input class="form-control input-lg" type="email" id="email" name="email" placeholder="E-mail" value="<?php echo set_value('email'); ?>">
         </div>
 
-        <div class="form-group <?php if (form_error('password')) {echo 'has-error';} ?> col-md-4">
+        <div class="form-group <?php if (form_error('password')) {echo 'has-error';} ?> col-md-6 col-md-offset-3">
             <label class="sr-only control-label" for="password">Password</label>
             <input class="form-control input-lg" type="password" id="password" name="password" placeholder="Password">
+        </div>
+        
+        <div class="form-group col-md-6 col-md-offset-3">
+            <?php echo validation_errors(); ?>
         </div>
 
         <div class="form-group col-md-4 col-md-offset-4">

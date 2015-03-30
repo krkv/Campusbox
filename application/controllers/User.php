@@ -6,12 +6,15 @@ class User extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
+        $this->load->helper('text');
         $this->load->model('user_model');
-        $this->load->model('item_model');
-        
+        $this->load->model('item_model');        
     }
 
     public function view($id) {
+        if (!$this->session->userdata('logged_in')) {
+            redirect('login');
+        }
         $data['selected_user'] = $this->user_model->get_user($id);
         if (empty($data['selected_user'])) {
             show_403();

@@ -9,7 +9,6 @@
 
         <!-- Bootstrap -->
         <link href="<?php echo base_url("css/bootstrap-paper.css") ?>" rel="stylesheet">
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

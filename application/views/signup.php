@@ -6,32 +6,32 @@
 
         <?php echo form_open('signup/index') ?>
 
-        <div class="form-group col-md-4 col-md-offset-2">
+        <div class="form-group <?php if (form_error('email')) {echo 'has-error';} ?> col-md-6 col-md-offset-3">
             <label class="sr-only control-label" for="email">E-mail</label>
             <input class="form-control input-lg" type="email" id="email" name="email" placeholder="Your e-mail"  value="<?php echo set_value('email'); ?>">
         </div>
 
-        <div class="form-group col-md-4">
-            <label class="sr-only control-label" for="password">Full name</label>
+        <div class="form-group <?php if (form_error('name')) {echo 'has-error';} ?> col-md-6 col-md-offset-3">
+            <label class="sr-only control-label" for="name">Full name</label>
             <input class="form-control input-lg" type="text" id="name" name="name" placeholder="Your name"  value="<?php echo set_value('name'); ?>">
         </div>
 
-        <div class="form-group col-md-4 col-md-offset-2">
+        <div class="form-group <?php if (form_error('password')) {echo 'has-error';} ?> col-md-6 col-md-offset-3">
             <label class="sr-only control-label" for="password">Password</label>
             <input class="form-control input-lg" type="password" id="password" name="password" placeholder="Enter password">
         </div>
 
-        <div class="form-group col-md-4">
+        <div class="form-group <?php if (form_error('confirmation')) {echo 'has-error';} ?> col-md-6 col-md-offset-3">
             <label class="sr-only control-label" for="confirmation">Confirm Password</label>
             <input class="form-control input-lg" type="password" id="confirmation" name="confirmation" placeholder="Confirm password">
         </div>
 
-        <div class="form-group col-md-4 col-md-offset-4">
+        <div class="form-group <?php if (form_error('campus_key')) {echo 'has-error';} ?> col-md-6 col-md-offset-3">
             <label class="sr-only control-label" for="campus_key">Campus key</label>
             <input class="form-control input-lg" type="password" id="campus_key" name="campus_key" placeholder="Campus key">
         </div>
         
-        <div>
+        <div class="form-group col-md-6 col-md-offset-3">
             <?php echo validation_errors(); ?>
         </div>
 

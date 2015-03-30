@@ -30,3 +30,9 @@ body {
     text-align: center;
     margin-bottom: 0px;
 }
+
+.navbar-form {
+    border-top: none;
+    border-bottom: none;
+    box-shadow: none;
+}

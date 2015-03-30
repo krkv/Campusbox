@@ -12,6 +12,9 @@ class Signup extends CI_Controller {
     }
 
     public function index() {
+        if ($this->session->userdata('logged_in')) {
+            redirect('/');
+        }
         $this->form_validation->set_rules('name', 'name', 'trim|required');
         $this->form_validation->set_rules('email', 'email', 'trim|required|valid_email|is_unique[user.email]');
         $this->form_validation->set_rules('password', 'password', 'trim|required');
