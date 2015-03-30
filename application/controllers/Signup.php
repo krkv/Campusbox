@@ -19,7 +19,6 @@ class Signup extends CI_Controller {
         $this->form_validation->set_rules('email', 'email', 'trim|required|valid_email|is_unique[user.email]');
         $this->form_validation->set_rules('password', 'password', 'trim|required');
         $this->form_validation->set_rules('confirmation', 'password confirmation', 'trim|required|matches[password]');
-        $this->form_validation->set_rules('campus_key', 'campus key', 'trim|required|callback_check_key');
         if ($this->form_validation->run() === FALSE) {
             $this->load->view('header');
             $this->load->view('signup');
@@ -27,14 +26,6 @@ class Signup extends CI_Controller {
         } else {
             $this->user_model->add_new_user();
             redirect('/');
-        }
-    }
-
-    public function check_key($key) {
-        if ($key == "application") {
-            return TRUE;
-        } else {
-            return FALSE;
         }
     }
 
