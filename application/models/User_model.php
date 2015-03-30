@@ -9,7 +9,7 @@ class User_model extends CI_Model {
 		return $query->row();
     }
 
-    public function add_user()
+    public function add_new_user()
     {
 	    $data = array(
 		    'name' => $this->input->post('name'),

@@ -1,8 +1,8 @@
 <div class="jumbotron">
 
-    <div class="container text-center">
+    <div class="container">
 
-        <h1 class="page-header">
+        <h1>
             Welcome to Campusbox!
         </h1>
 
@@ -24,7 +24,7 @@
             </a>
 
         </p>
-	
+
     </div>
 
 </div>

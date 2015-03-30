@@ -10,7 +10,7 @@
 			        <h3>Your item</h3>
                     <p>Click here to upload a new item</p>
 			        <p>
-                        <?php if ($this->session->userdata('user_id')): ?>
+                        <?php if ($this->session->userdata('logged_in')): ?>
 
                             <a class="btn btn-success" href="<?php echo site_url('item/add'); ?>" role="button">
                                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
@@ -19,7 +19,7 @@
 
                         <?php else: ?>
 
-                            <a class="btn btn-warning" href="<?php echo site_url('signup'); ?>" role="button">
+                            <a class="btn btn-warning" href="<?php echo site_url('login'); ?>" role="button">
                                 <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
                                 Upload
                             </a>
