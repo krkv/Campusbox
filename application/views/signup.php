@@ -25,11 +25,6 @@
             <label class="sr-only control-label" for="confirmation">Confirm Password</label>
             <input class="form-control input-lg" type="password" id="confirmation" name="confirmation" placeholder="Confirm password">
         </div>
-
-        <div class="form-group <?php if (form_error('campus_key')) {echo 'has-error';} ?> col-md-6 col-md-offset-3">
-            <label class="sr-only control-label" for="campus_key">Campus key</label>
-            <input class="form-control input-lg" type="password" id="campus_key" name="campus_key" placeholder="Campus key">
-        </div>
         
         <div class="form-group col-md-6 col-md-offset-3">
             <?php echo validation_errors(); ?>
