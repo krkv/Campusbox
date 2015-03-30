@@ -5,6 +5,10 @@
         <h1>
             <?php echo $selected_user->name; ?>
         </h1>
+        
+        <p>
+            Uploaded <?php echo $item_count; ?> items.
+        </p>
 
         <p>
             <?php echo safe_mailto($selected_user->email,

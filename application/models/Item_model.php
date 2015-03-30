@@ -18,6 +18,13 @@ class Item_model extends CI_Model {
         $query = $this->db->get_where('item', array('userid' => $userid));
         return $query->result();
     }
+    
+    public function count_user_items($userid) {
+        $this->db->select('*');
+        $this->db->from('item');
+        $this->db->where('userid', $userid);
+        return $this->db->count_all_results();
+    }
 
     public function get_one_item($id) {
         $query = $this->db->get_where('item', array('id' => $id));

@@ -7,7 +7,7 @@
         <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="thumbnail">
                 <div class="caption">
-                    <h3>Your item</h3>
+                    <h3>New item</h3>
                     <p>Click here to upload a new item</p>
                     <p>
                         <?php if ($this->session->userdata('logged_in')): ?>
