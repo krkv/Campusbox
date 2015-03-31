@@ -37,12 +37,16 @@ body {
     box-shadow: none;
 }
 
-.white-section {
+.list-section {
     padding-top: 50px;
     padding-bottom: 27px;
 }
 
-.white-section h1 {
+.menu-section, .search-section {
+    padding-top: 50px;   
+}
+
+.menu-section h1, .search-section h3 {
     margin: 0px;
-    padding: 0px 0px 55px 0px;
+    padding: 0px;
 }

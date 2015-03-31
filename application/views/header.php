@@ -43,11 +43,27 @@
 
                 <div class="collapse navbar-collapse" id="navbar">
 
-                    <form class="navbar-form navbar-left">
-                        <div class="form-group">
-                            <input type="text" placeholder="Search" class="form-control">
+                    <?php echo form_open('item/search', array('class' => 'navbar-form navbar-left')) ?>
+
+                    <div class="form-group">
+
+                        <div class="input-group">
+
+                            <label class="sr-only control-label" for="search">Search</label>
+                            <input type="text" id="search" name="search" placeholder="Search" class="form-control">
+
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="submit">
+                                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                    Go
+                                </button>
+                            </span>                            
+
                         </div>
-                    </form>
+
+                    </div>
+
+                    <?php echo form_close(); ?>
 
                     <ul class="nav navbar-nav navbar-right">
 

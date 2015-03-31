@@ -47,5 +47,14 @@ class Item_model extends CI_Model {
         );
         return $this->db->insert('item', $data);
     }
+    
+    public function get_matching($user_query) {
+        $this->db->select('*');
+        $this->db->from('item');
+        $this->db->like('title', $user_query);
+        $this->db->or_like('description', $user_query);
+        $query = $this->db->get();
+        return $query->result();
+    }
 
 }

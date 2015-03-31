@@ -18,7 +18,8 @@ class Item extends CI_Controller {
         if (!$this->session->userdata('logged_in')) {
             $this->load->view('welcome');
         }
-        $this->load->view('item/index', $data);
+        $this->load->view('menu');
+        $this->load->view('item/list', $data);
         $this->load->view('footer');
     }
 
@@ -54,6 +55,27 @@ class Item extends CI_Controller {
             $this->item_model->add_new_item();
             redirect('/');
         }
+    }
+
+    public function search($user_query = FALSE) {
+
+        if ($this->input->post('search')) {
+            $user_query = $this->input->post('search');
+            redirect('item/search/' . $user_query);
+        } 
+
+        if ($user_query) {
+            $data['item_list'] = $this->item_model->get_matching($user_query);
+        } else {
+            $data['item_list'] = FALSE;
+        }
+
+        $data['user_query'] = $user_query;
+        
+        $this->load->view('header');
+        $this->load->view('search', $data);
+        $this->load->view('item/list', $data);
+        $this->load->view('footer');
     }
 
 }
