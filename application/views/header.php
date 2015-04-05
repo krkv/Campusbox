@@ -66,10 +66,6 @@
                     <?php echo form_close(); ?>
 
                     <ul class="nav navbar-nav navbar-right">
-                    
-                        <li>
-                        <span id="hours">0</span>:<span id="minutes">0</span>:<span id="seconds">0</span>
-                        </li>
 
                         <?php if ($this->session->userdata('user_id')): ?>
 
