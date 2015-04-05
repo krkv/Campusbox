@@ -3,7 +3,7 @@
  });
  function ajaxcall(){
      $.ajax({
-         url: 'system/libraries/gettime.php',
+         url: 'application/libraries/gettime.php',
          success: function(data) {
              data = data.split(':');
              $('#hours').html(data[0]);
