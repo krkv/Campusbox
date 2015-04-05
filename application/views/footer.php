@@ -11,7 +11,7 @@
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="<?php echo base_url("js/bootstrap.js") ?>"></script>   
-<script src="<?php echo base_url("js/buttondisabled.js") ?>"></script>
+<script src="<?php echo base_url("js/disable_button.js") ?>"></script>
 <script src="<?php echo base_url("js/clock.js") ?>"></script>
 
 </body>

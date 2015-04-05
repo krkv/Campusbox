@@ -31,7 +31,7 @@
         </div>
 
         <div class="form-group col-md-4 col-md-offset-4">
-            <button type="submit" name="submit" class="btn btn-lg btn-success btn-block">
+            <button type="submit" name="submit" class="btn btn-lg btn-success btn-block" onclick="disable_signup();" id="signup">
                 <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                 Sign up
             </button>

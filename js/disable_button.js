@@ -1,10 +1,9 @@
-
-function change1()
+function disable_signup()
 {
     document.getElementById("signup").className += " disabled";
 }
 
-function change2()
+function disable_login()
 {
    document.getElementById("login").className += " disabled"; 
 }

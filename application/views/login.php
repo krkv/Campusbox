@@ -21,7 +21,7 @@
         </div>
 
         <div class="form-group col-md-4 col-md-offset-4">
-            <button type="submit" name="submit" class="btn btn-lg btn-primary btn-block">
+            <button type="submit" name="submit" class="btn btn-lg btn-primary btn-block" onclick="disable_login();" id="login">
                 <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
                 Log in
             </button>
