@@ -21,6 +21,10 @@ body {
     padding-right: 5px;
 }
 
+.page-footer{
+    text-align: right;
+ }
+
 .page-header {
     border-bottom: 0px;
 }
