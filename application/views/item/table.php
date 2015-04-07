@@ -35,7 +35,7 @@
                             
                             <?php else: ?>
                             
-                            <a href="<?php echo site_url('login'.$item->user_id) ?>">
+                            <a href="<?php echo site_url('login') ?>">
                                 <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
                                 Log in to contact seller
                             </a>
