@@ -38,6 +38,25 @@ class Item_model extends CI_Model {
         $query = $this->db->get();
         return $query->result();
     }
+    
+    public function get_join_new($datetime) {
+        $this->db->select('item.id, item.title, user.name, user.id as user_id, item.timestamp');
+        $this->db->from('item');
+        $this->db->join('user', 'user.id = item.userid');
+        $this->db->where('timestamp >', $datetime);
+        $this->db->order_by('timestamp', 'desc'); 
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function get_time($datetime){
+        $this->db->select('item.timestamp');
+        $this->db->from('item');
+        $this->db->where('timestamp >', $datetime);
+        $this->db->order_by('timestamp', 'desc'); 
+        $query = $this->db->get();
+        return $query->result();
+    }
 
     public function add_new_item() {
         $data = array(
@@ -45,6 +64,7 @@ class Item_model extends CI_Model {
             'title' => $this->input->post('title'),
             'description' => $this->input->post('description'),
         );
+        $this->db->set('timestamp', 'NOW()', FALSE);
         return $this->db->insert('item', $data);
     }
     

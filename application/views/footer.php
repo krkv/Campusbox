@@ -13,6 +13,7 @@
 <script src="<?php echo base_url("js/bootstrap.js") ?>"></script>   
 <script src="<?php echo base_url("js/disable_button.js") ?>"></script>
 <script src="<?php echo base_url("js/clock.js") ?>"></script>
+<script src="<?php echo base_url("js/DataPush.js") ?>"></script>
 
 </body>
 </html>

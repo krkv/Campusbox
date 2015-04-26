@@ -1,5 +1,7 @@
 <div class="container list-section">
 
+    <?phplatestItems(currentTime())?>
+
     <div class="row text-center">
 
         <?php if ($item_list): ?>
@@ -39,7 +41,7 @@
 
             <?php endforeach ?>
 
-        <?php endif; ?>
+        <?php endif; ?>    
 
     </div>
 
