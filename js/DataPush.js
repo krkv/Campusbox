@@ -2,13 +2,13 @@ function latestItems(time){
     var string = {'timestamp' : time};
 
     //$.post(URL,data,callback);
-    $.post('helpers/datapush.php', string, 
-        function(data){
+    $.post('helpers/datapush.php', string,
+        function (data) {
             var obj = $.parseJSON(data);
             //obj.content
             //so this is the part where new item should be displayed 
-            //do not no how
-
+            //next line should add item
+            $('#here').prepend(obj.content);
             latestItems(obj.timestamp);
         });
     }

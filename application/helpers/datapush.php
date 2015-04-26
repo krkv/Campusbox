@@ -24,7 +24,18 @@ if(isset($_POST['timestamp']))
                 break;
             }
             foreach($newitems as $item){
-               $data .=$item;
+               $data .=    '<div class="caption">
+                            <h3><?php echo word_wrap($item->title, 20) ?></h3>
+                            
+                            <p><?php echo $item->description ?></p>
+                            
+                            <p>
+                                <a class="btn btn-primary" href="<?php echo site_url(array("item", "view", $item->id));?>" role="button">
+                                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                                    Details
+                                </a>
+                            </p>
+                            </div>';
             }
 
 
