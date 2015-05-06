@@ -3,6 +3,7 @@
         &copy; Campusbox 2015.
         Campusbox is under development at University of Tartu.
         Current time in Tartu is <span id="hours">0</span>:<span id="minutes">0</span>:<span id="seconds">0</span>.
+        There are <span id="items"><?php echo $number ?></span> items in the store.
     </p>
 </div>
 

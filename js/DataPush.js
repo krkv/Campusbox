@@ -1,45 +1,56 @@
-function latestItems(time){
-    var string = {'timestamp' : time};
+ $(document).ready(function(){
+     setInterval(datapush, 10000);
+ });
 
-    //$.post(URL,data,callback);
-    $.post('helpers/datapush.php', string,
-        function (data) {
-            var obj = $.parseJSON(data);
-            //obj.content
-            //so this is the part where new item should be displayed 
-            //next line should add item
-            $('#here').prepend(obj.content);
-            latestItems(obj.timestamp);
-        });
-    }
-        
-function currentTime(){
-    var date = new Date();
+	function datapush() {
+			$.getJSON("item/json", function(data) {
+                $(data).prependTo("#items");
 
-    var month = date.getMonth() + 1;
-    var day = date.getDate();
-    var hour = date.getHours();
-    var minutes = date.getMinutes();
-    var seconds = date.getSeconds();
+/*				var new_items = [];
+				$.each(data, function(val) {
+					if(document.getElementById(val.id) === null){
+						new_items.push(
+                        '<div class="col-xs-12 col-sm-6 col-md-4">'
+                            +'<div class="thumbnail">'
+                                +'<div id= '+ val.id + 'class="caption">'
+                                    +'<h3>' + wordwrap(val.title, 20) + '</h3>'
+                                    +'<p>' + val.description + '</p>'
+                                    +'<p>'
+                                        +'<a class="btn btn-primary" href="item/view/'+ val.id + '" role="button">'
+                                            +'<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>'
+                                            +'Details'
+                                        +'</a>'
+                                    +'</p>'
+                                +'</div>'
+                            +'</div>'
+                        +'</div>'
+                        );
+					}
+				});
 
-    if (month < 10) {
-        month = '0' + month;
-    }
-    if (day < 10) {
-        day = '0' + day;
-    }
-    if (hour < 10) {
-        hour = '0' + hour;
-    }
-    if (minutes < 10) {
-        minutes = '0' + minutes;
-    }
-    if (seconds < 10) {
-        seconds = '0' + seconds;
-    }
+				$.each(new_items, function(value) {
+					$(value).appendTo("#items");
+				});
 
-    //YYYY-MM-DD HH:MI:SS
-    return date.getFullYear() + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds;
+                */
+	    });
+    };
+
+// http://james.padolsey.com/snippets/wordwrap-for-javascript/
+
+
+/*
+function wordwrap( str, width, brk, cut ) {
+ 
+    brk = brk || 'n';
+    width = width || 75;
+    cut = cut || false;
+ 
+    if (!str) { return str; }
+ 
+    var regex = '.{1,' +width+ '}(\s|$)' + (cut ? '|.{' +width+ '}|.+$' : '|\S+?(\s|$)');
+ 
+    return str.match( RegExp(regex, 'g') ).join( brk );
+ 
 }
-
-latestItems(currentTime());
+*/

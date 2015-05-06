@@ -9,6 +9,11 @@ class Item_model extends CI_Model {
         return $query->result();
     }
 
+    public function get_all_items_count(){
+        return $this->db->count_all_results('item');
+    }
+    
+    
     public function get_top_items() {
         $query = $this->db->get('item', 4);
         return $query->result();
@@ -38,25 +43,7 @@ class Item_model extends CI_Model {
         $query = $this->db->get();
         return $query->result();
     }
-    
-    public function get_join_new($datetime) {
-        $this->db->select('item.id, item.title, user.name, user.id as user_id, item.timestamp');
-        $this->db->from('item');
-        $this->db->join('user', 'user.id = item.userid');
-        $this->db->where('timestamp >', $datetime);
-        $this->db->order_by('timestamp', 'desc'); 
-        $query = $this->db->get();
-        return $query->result();
-    }
 
-    public function get_time($datetime){
-        $this->db->select('item.timestamp');
-        $this->db->from('item');
-        $this->db->where('timestamp >', $datetime);
-        $this->db->order_by('timestamp', 'desc'); 
-        $query = $this->db->get();
-        return $query->result();
-    }
 
     public function add_new_item() {
         $data = array(
