@@ -1,10 +1,10 @@
  $(document).ready(function(){
-     setInterval(datapush, 10000);
+     setInterval(datapush, 1000);
  });
 
-	function datapush() {
-			$.getJSON("item/json", function(data) {
-                $(data).prependTo("#items");
+function datapush() {
+    $.getJSON("item/json", function(data) {
+        $('#items').html(data)
 
 /*				var new_items = [];
 				$.each(data, function(val) {
