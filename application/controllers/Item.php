@@ -32,7 +32,7 @@ class Item extends CI_Controller {
         }
         $this->load->view('header');
         $this->load->view('item/view', $data);
-        $this->load->view('footer',number);
+        $this->load->view('footer', $data);
     }
 
     public function table() {
@@ -87,5 +87,4 @@ class Item extends CI_Controller {
 		$result = $this->item_model->get_all_items_count();
 		echo json_encode($result);
  	}
-
 }

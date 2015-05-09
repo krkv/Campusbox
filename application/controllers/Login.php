@@ -9,6 +9,8 @@ class Login extends CI_Controller {
         $this->load->helper('form');
         $this->load->library('form_validation');
         $this->load->model('user_model');
+        $this->load->model('item_model');
+
     }
 
     public function index() {
@@ -18,9 +20,10 @@ class Login extends CI_Controller {
         $this->form_validation->set_rules('email', 'email', 'trim|required');
         $this->form_validation->set_rules('password', 'password', 'trim|required|callback_check_password');
         if ($this->form_validation->run() == FALSE) {
+            $data['number']=$this->item_model->get_all_items_count();
             $this->load->view('header');
             $this->load->view('login');
-            $this->load->view('footer');
+            $this->load->view('footer', $data);
         } else {
             if ($this->session->userdata('request')) {
                 $request = $this->session->userdata('request');

@@ -9,6 +9,7 @@ class Signup extends CI_Controller {
         $this->load->helper('form');
         $this->load->library('form_validation');
         $this->load->model('user_model');
+        $this->load->model('item_model');
     }
 
     public function index() {
@@ -20,9 +21,10 @@ class Signup extends CI_Controller {
         $this->form_validation->set_rules('password', 'password', 'trim|required');
         $this->form_validation->set_rules('confirmation', 'password confirmation', 'trim|required|matches[password]');
         if ($this->form_validation->run() === FALSE) {
+            $data['number']=$this->item_model->get_all_items_count();
             $this->load->view('header');
             $this->load->view('signup');
-            $this->load->view('footer');
+            $this->load->view('footer', $data);
         } else {
             $this->user_model->add_new_user();
             redirect('/');

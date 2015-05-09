@@ -13,7 +13,6 @@ class Item_model extends CI_Model {
         return $this->db->count_all_results('item');
     }
     
-    
     public function get_top_items() {
         $query = $this->db->get('item', 4);
         return $query->result();
