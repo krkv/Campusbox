@@ -20,7 +20,6 @@ class Login extends CI_Controller {
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('header');
             $this->load->view('login');
-            $this->load->view('footer');
         } else {
             if ($this->session->userdata('request')) {
                 $request = $this->session->userdata('request');

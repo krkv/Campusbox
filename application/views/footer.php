@@ -1,9 +1,8 @@
 <div class="container">
     <p class="text-center">
         &copy; Campusbox 2015.
-        Campusbox is under development at University of Tartu.
-        Current time in Tartu is <span id="hours">0</span>:<span id="minutes">0</span>:<span id="seconds">0</span>.
-        There are <span id="items"><?php echo $number ?></span> items in the store.
+        Server time is <span id="hours">0</span>:<span id="minutes">0</span>:<span id="seconds">0</span>.
+        There are <span id="items"><?php echo $number ?></span> items in Campusbox.
     </p>
 </div>
 
@@ -13,8 +12,7 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="<?php echo base_url("js/bootstrap.js") ?>"></script>   
 <script src="<?php echo base_url("js/disable_button.js") ?>"></script>
-<script src="<?php echo base_url("js/clock.js") ?>"></script>
-<script src="<?php echo base_url("js/DataPush.js") ?>"></script>
+<script src="<?php echo base_url("js/campusbox.js") ?>"></script>
 
 </body>
 </html>

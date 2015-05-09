@@ -23,10 +23,11 @@ class User extends CI_Controller {
         }
         $data['item_list'] = $this->item_model->get_user_items($id);
         $data['item_count'] = $this->item_model->count_user_items($id);
+        $data['number']=$this->item_model->get_all_items_count();
         $this->load->view('header');
         $this->load->view('profile', $data);
         $this->load->view('item/list', $data);
-        $this->load->view('footer');
+        $this->load->view('footer', $data);
     }
 
 }

@@ -1,6 +1,8 @@
  $(document).ready(function(){
      setInterval(ajaxcall, 1000);
+     setInterval(datapush, 1000);
  });
+ 
  function ajaxcall(){
      $.ajax({
          url: location.protocol + "//" + location.host + "/resources/gettime.php",
@@ -12,3 +14,9 @@
          }
      });
  }
+
+function datapush() {
+    $.getJSON("item/json", function (data) {
+        $('#items').html(data);
+    });
+}

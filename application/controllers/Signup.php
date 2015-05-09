@@ -22,7 +22,6 @@ class Signup extends CI_Controller {
         if ($this->form_validation->run() === FALSE) {
             $this->load->view('header');
             $this->load->view('signup');
-            $this->load->view('footer');
         } else {
             $this->user_model->add_new_user();
             redirect('/');

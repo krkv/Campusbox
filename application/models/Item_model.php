@@ -51,7 +51,6 @@ class Item_model extends CI_Model {
             'title' => $this->input->post('title'),
             'description' => $this->input->post('description'),
         );
-        $this->db->set('timestamp', 'NOW()', FALSE);
         return $this->db->insert('item', $data);
     }
     
