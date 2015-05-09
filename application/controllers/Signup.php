@@ -24,7 +24,6 @@ class Signup extends CI_Controller {
             $data['number']=$this->item_model->get_all_items_count();
             $this->load->view('header');
             $this->load->view('signup');
-            $this->load->view('footer', $data);
         } else {
             $this->user_model->add_new_user();
             redirect('/');

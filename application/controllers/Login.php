@@ -23,7 +23,6 @@ class Login extends CI_Controller {
             $data['number']=$this->item_model->get_all_items_count();
             $this->load->view('header');
             $this->load->view('login');
-            $this->load->view('footer', $data);
         } else {
             if ($this->session->userdata('request')) {
                 $request = $this->session->userdata('request');
