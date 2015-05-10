@@ -29,5 +29,20 @@ class User extends CI_Controller {
         $this->load->view('item/list', $data);
         $this->load->view('footer', $data);
     }
+    
+    public function delete($user_id) {
+        $selected_user = $this->user_model->get_user($user_id);
+        if (empty($selected_user)) {
+            show_404();
+        }
+        if (!$this->session->userdata('logged_in')) {
+            redirect('/');
+        }
+        if (!$this->session->userdata('user_id') == $user_id) {
+            redirect('/');
+        }
+        $this->user_model->delete_user($user_id);
+        redirect('/logout');
+    }
 
 }

@@ -9,7 +9,20 @@
         <p>
             Uploaded <?php echo $item_count; ?> items.
         </p>
+        
+        <?php if ($this->session->userdata('user_id') == $selected_user->id): ?>
+        
+        <p>
+            
+            <a class="btn btn-danger btn-lg" href="<?php echo site_url('user/delete/'.$selected_user->id); ?>" role="button" title="Delete profile">
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                Delete profile
+            </a>
+           
+        </p>
 
+        <?php else: ?>
+        
         <p>
 
             <?php
@@ -17,6 +30,8 @@
                 'role' => 'button',
                 'title' => 'Send e-mail to '));
             ?>
+
+            <?php endif; ?>
 
         </p>
 
