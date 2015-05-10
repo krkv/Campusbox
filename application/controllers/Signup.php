@@ -25,7 +25,12 @@ class Signup extends CI_Controller {
             $this->load->view('header');
             $this->load->view('signup');
         } else {
-            $this->user_model->add_new_user();
+            $new_user_id = $this->user_model->add_new_user();
+            $new_user = $this->user_model->get_user($new_user_id);
+            $this->session->set_userdata('logged_in', TRUE);
+            $this->session->set_userdata('user_id', $new_user->id);
+            $this->session->set_userdata('user_email', $new_user->email);
+            $this->session->set_userdata('user_name', $new_user->name);
             redirect('/');
         }
     }

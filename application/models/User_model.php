@@ -17,7 +17,8 @@ class User_model extends CI_Model {
             'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
 	    );
 
-	    return $this->db->insert('user', $data);
+	    $this->db->insert('user', $data);
+        return $this->db->insert_id();
     }
 
     public function login_result($email, $password)
