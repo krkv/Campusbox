@@ -60,6 +60,21 @@ class Item extends CI_Controller {
             redirect('/');
         }
     }
+    
+    public function delete($item_id) {
+        $selected_item = $this->item_model->get_one_item($item_id);
+        if (empty($selected_item)) {
+            show_404();
+        }
+        if (!$this->session->userdata('logged_in')) {
+            redirect('/');
+        }
+        if (!$this->session->userdata('user_id') == $selected_item->userid) {
+            redirect('/');
+        }
+        $this->item_model->delete_item($item_id);
+        redirect('/');
+    }
 
     public function search($user_query = FALSE) {
 

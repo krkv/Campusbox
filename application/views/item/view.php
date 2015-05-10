@@ -13,10 +13,21 @@
         <p>
             <?php if ($this->session->userdata('logged_in')): ?>
             
-            <a class="btn btn-success btn-lg" href="<?php echo site_url('user/view/'.$selected_item->userid); ?>" role="button" title="Contact seller">
-                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                Contact seller
-            </a>
+                <?php if ($this->session->userdata('user_id') == $selected_item->userid): ?>
+            
+                <a class="btn btn-danger btn-lg" href="<?php echo site_url('item/delete/'.$selected_item->id); ?>" role="button" title="Delete item">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    Delete
+                </a>
+            
+                <?php else: ?>
+            
+                <a class="btn btn-success btn-lg" href="<?php echo site_url('user/view/'.$selected_item->userid); ?>" role="button" title="Contact seller">
+                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                    Contact seller
+                </a>
+            
+                <?php endif; ?>
             
             <?php else: ?>
             

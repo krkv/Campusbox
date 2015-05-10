@@ -43,7 +43,6 @@ class Item_model extends CI_Model {
         return $query->result();
     }
 
-
     public function add_new_item() {
         $data = array(
             'userid' => $this->session->userdata('user_id'),
@@ -60,6 +59,11 @@ class Item_model extends CI_Model {
         $this->db->or_like('description', $user_query);
         $query = $this->db->get();
         return $query->result();
+    }
+    
+    public function delete_item($item_id) {
+        $this->db->where(id, $item_id);
+        return $this->db->delete('item');
     }
 
 }
