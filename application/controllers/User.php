@@ -31,18 +31,14 @@ class User extends CI_Controller {
     }
     
     public function delete($user_id) {
-        $selected_user = $this->user_model->get_user($user_id);
-        if (empty($selected_user)) {
-            show_404();
+        if ($this->session->userdata('user_id') == $user_id) {
+            $this->user_model->delete_user($user_id);
+            redirect('/logout');
         }
-        if (!$this->session->userdata('logged_in')) {
-            redirect('/');
+        else {
+            show_error('You are not allowed to do that!', 403, $heading = 'Forbidden');
         }
-        if (!$this->session->userdata('user_id') == $user_id) {
-            redirect('/');
-        }
-        $this->user_model->delete_user($user_id);
-        redirect('/logout');
+        
     }
 
 }
