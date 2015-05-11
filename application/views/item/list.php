@@ -10,20 +10,50 @@
 
                 <div class="col-xs-12 col-sm-6 col-md-4">
                     <div class="thumbnail">
-                        <img src="<?php echo base_url('images/item.png') ?>">
+                        
+                        <a href="<?php echo site_url(array('item', 'view', $item->id)); ?>">
+                            <img src="<?php echo base_url('images/item.png') ?>">
+                        </a>
+                        
                         <div class="caption">
-                            
+
                             <h3><?php echo word_wrap($item->title, 20) ?></h3>
-                            
+
                             <p><?php echo $item->description ?></p>
-                            
+
                             <p>
-                                <a class="btn btn-primary" href="<?php echo site_url(array('item', 'view', $item->id)); ?>" role="button">
-                                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+
+                                <?php if ($this->session->userdata('user_id') == $item->userid): ?>
+
+                                <div class="btn-group">
+                                    <a href="<?php echo site_url(array('item', 'view', $item->id)); ?>" class="btn btn-default">
+                                        Details
+                                    </a>
+                                    <a aria-expanded="false" href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="#">
+                                                Edit
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="<?php echo site_url(array('item', 'delete', $item->id)); ?>">
+                                                Delete
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            <?php else: ?>
+
+                                <a class="btn btn-default" href="<?php echo site_url(array('item', 'view', $item->id)); ?>" role="button">
                                     Details
                                 </a>
+
+                            <?php endif; ?>
+
                             </p>
-                            
+
                         </div>
                     </div>
                 </div>

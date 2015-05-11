@@ -1,11 +1,15 @@
-<div class="jumbotron">
+<div class="jumbotron jumbotron-white">
 
     <div class="container">
 
         <h1>
             <?php echo $selected_item->title; ?>
         </h1>
-
+        
+        <p>
+            <img src="<?php echo base_url('images/item.png') ?>" class="img-responsive img-item">
+        </p>
+        
         <p>
             <?php echo $selected_item->description; ?>
         </p>
@@ -43,7 +47,7 @@
         <p>
             <a class="btn btn-default" href="<?php echo site_url('/'); ?>" role="button" title="Campusbox home">
                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-                Campusbox home
+                Campusbox
             </a>
         </p>
 

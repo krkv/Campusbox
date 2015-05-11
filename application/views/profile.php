@@ -44,7 +44,7 @@
 
             <a class="btn btn-default" href="<?php echo site_url('/'); ?>" role="button" title="Campusbox home">
                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-                Campusbox home
+                Campusbox
             </a>
 
         </p>

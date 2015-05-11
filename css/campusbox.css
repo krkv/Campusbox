@@ -35,6 +35,14 @@ body {
     margin-bottom: 0px;
 }
 
+.jumbotron-white {
+    background-color: #FFFFFF;
+}
+
+.img-item {
+    margin: auto;
+}
+
 .navbar-form {
     border-top: none;
     border-bottom: none;
