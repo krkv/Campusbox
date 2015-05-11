@@ -61,14 +61,7 @@
                         <div class="input-group">
 
                             <label class="sr-only control-label" for="search">Search</label>
-                            <input type="text" id="search" name="search" placeholder="Search" class="form-control">
-
-                            <span class="input-group-btn">
-                                <button class="btn btn-primary" type="submit">
-                                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                                    Go
-                                </button>
-                            </span>                            
+                            <input type="text" id="search" name="search" placeholder="Search" class="form-control">                           
 
                         </div>
 
