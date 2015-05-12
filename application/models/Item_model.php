@@ -65,5 +65,15 @@ class Item_model extends CI_Model {
         $this->db->where(id, $item_id);
         return $this->db->delete('item');
     }
+    
+    public function edit_item($item_id) {
+        $data = array(
+            'userid' => $this->session->userdata('user_id'),
+            'title' => $this->input->post('title'),
+            'description' => $this->input->post('description'),
+        );
+        $this->db->where(id, $item_id);
+        return $this->db->update('item', $data);
+    }
 
 }

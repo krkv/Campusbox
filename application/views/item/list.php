@@ -32,7 +32,7 @@
                                     <a aria-expanded="false" href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li>
-                                            <a href="#">
+                                            <a href="<?php echo site_url(array('item', 'edit', $item->id)); ?>">
                                                 Edit
                                             </a>
                                         </li>

@@ -21,7 +21,6 @@ class Signup extends CI_Controller {
         $this->form_validation->set_rules('password', 'password', 'trim|required');
         $this->form_validation->set_rules('confirmation', 'password confirmation', 'trim|required|matches[password]');
         if ($this->form_validation->run() === FALSE) {
-            $data['number']=$this->item_model->get_all_items_count();
             $this->load->view('header');
             $this->load->view('signup');
         } else {
