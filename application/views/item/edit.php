@@ -4,7 +4,7 @@
 
         <h1 class="page-header">Edit item</h1>
 
-        <?php echo form_open('item/edit') ?>
+        <?php echo form_open('item/do_edit') ?>
         
         <input type="hidden" id="id" name="id" value="<?php echo $selected_item->id; ?>">
 

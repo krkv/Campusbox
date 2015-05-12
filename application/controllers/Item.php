@@ -61,32 +61,32 @@ class Item extends CI_Controller {
         }
     }
 
-    public function edit($item_id = FALSE) {
-        if ($item_id) {
-            $selected_item = $this->item_model->get_one_item($item_id);
-            if ($this->session->userdata('user_id') == $selected_item->userid) {
-                $data['number'] = $this->item_model->get_all_items_count();
-                $data['selected_item'] = $selected_item;
-                $this->load->view('header');
-                $this->load->view('item/edit', $data);
-                $this->load->view('footer', $data);
-            } else {
-                show_error('You are not allowed to do that!', 403, $heading = 'Forbidden');
-            }
+    public function edit($item_id) {
+        $selected_item = $this->item_model->get_one_item($item_id);
+        if ($this->session->userdata('user_id') == $selected_item->userid) {
+            $data['number'] = $this->item_model->get_all_items_count();
+            $data['selected_item'] = $selected_item;
+            $this->load->view('header');
+            $this->load->view('item/edit', $data);
+            $this->load->view('footer', $data);
         } else {
-            $this->form_validation->set_rules('title', 'title', 'trim|required');
-            $item_id = $this->input->post('id');
-            $selected_item = $this->item_model->get_one_item($item_id);
-            if ($this->form_validation->run() === FALSE) {
-                $data['number'] = $this->item_model->get_all_items_count();
-                $data['selected_item'] = $selected_item;
-                $this->load->view('header');
-                $this->load->view('item/edit', $data);
-                $this->load->view('footer', $data);
-            } else {
-                $this->item_model->edit_item($item_id);
-                redirect('/item/view/' . $item_id);
-            }
+            show_error('You are not allowed to do that!', 403, $heading = 'Forbidden');
+        }
+    }
+
+    public function do_edit() {
+        $this->form_validation->set_rules('title', 'title', 'trim|required');
+        $item_id = $this->input->post('id');
+        $selected_item = $this->item_model->get_one_item($item_id);
+        if ($this->form_validation->run() === FALSE) {
+            $data['number'] = $this->item_model->get_all_items_count();
+            $data['selected_item'] = $selected_item;
+            $this->load->view('header');
+            $this->load->view('item/edit', $data);
+            $this->load->view('footer', $data);
+        } else {
+            $this->item_model->edit_item($item_id);
+            redirect('/item/view/' . $item_id);
         }
     }
 
@@ -94,7 +94,7 @@ class Item extends CI_Controller {
         $selected_item = $this->item_model->get_one_item($item_id);
         if ($this->session->userdata('user_id') == $selected_item->userid) {
             $this->item_model->delete_item($item_id);
-            redirect('/user/view/' . $this->session->userdata('user_id'));
+            redirect('/');
         } else {
             show_error('You are not allowed to do that!', 403, $heading = 'Forbidden');
         }

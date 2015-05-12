@@ -33,12 +33,12 @@
                                     <ul class="dropdown-menu">
                                         <li>
                                             <a href="<?php echo site_url(array('item', 'edit', $item->id)); ?>">
-                                                Edit
+                                                Edit item
                                             </a>
                                         </li>
                                         <li>
                                             <a href="<?php echo site_url(array('item', 'delete', $item->id)); ?>">
-                                                Delete
+                                                Delete item
                                             </a>
                                         </li>
                                     </ul>
