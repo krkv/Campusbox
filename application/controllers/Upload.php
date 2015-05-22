@@ -17,7 +17,8 @@ class Upload extends CI_Controller {
             $config['allowed_types'] = 'gif|jpg|png';
             $this->load->library('upload', $config);
             $this->load->library('form_validation');
-            $this->form_validation->set_rules('title', 'Title', 'required');
+            $this->form_validation->set_rules('title', 'Title', 'trim|required|max_length[100]');
+            $this->form_validation->set_rules('description', 'Description', 'trim|max_length[255]');
             if ($this->form_validation->run() == FALSE) {
                 $this->load->view('header');
                 $this->load->view('item/add');
