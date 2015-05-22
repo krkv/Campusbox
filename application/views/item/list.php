@@ -11,9 +11,19 @@
                 <div class="col-xs-12 col-sm-6 col-md-4">
                     <div class="thumbnail">
                         
+                        <?php if ($item->image): ?>
+                        
+                        <a href="<?php echo site_url(array('item', 'view', $item->id)); ?>">
+                            <img src="<?php echo base_url('uploads/'.$item->image) ?>">
+                        </a>
+                        
+                        <?php else: ?>
+                        
                         <a href="<?php echo site_url(array('item', 'view', $item->id)); ?>">
                             <img src="<?php echo base_url('images/item.png') ?>">
                         </a>
+                        
+                        <?php endif; ?>
                         
                         <div class="caption">
 

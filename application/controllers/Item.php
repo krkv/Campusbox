@@ -51,10 +51,8 @@ class Item extends CI_Controller {
         }
         $this->form_validation->set_rules('title', 'title', 'trim|required');
         if ($this->form_validation->run() === FALSE) {
-            $data['number'] = $this->item_model->get_all_items_count();
             $this->load->view('header');
             $this->load->view('item/add');
-            $this->load->view('footer', $data);
         } else {
             $this->item_model->add_new_item();
             redirect('/');

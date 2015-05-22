@@ -48,8 +48,10 @@ class Item_model extends CI_Model {
             'userid' => $this->session->userdata('user_id'),
             'title' => $this->input->post('title'),
             'description' => $this->input->post('description'),
+            'image' => $this->upload->data('file_name'),
         );
-        return $this->db->insert('item', $data);
+        $this->db->insert('item', $data);
+        return $this->db->insert_id();
     }
     
     public function get_matching($user_query) {

@@ -4,7 +4,7 @@
 
         <h1 class="page-header">Add item</h1>
 
-        <?php echo form_open('item/add') ?>
+        <?php echo form_open_multipart('upload/do_upload');?>
 
         <div class="form-group col-md-8 col-md-offset-2">
             <label class="sr-only control-label" for="title">Title</label>
@@ -14,6 +14,11 @@
         <div class="form-group col-md-8 col-md-offset-2">
             <label class="sr-only control-label" for="description">Description</label>
             <textarea class="form-control input-lg" rows="3" id="description" name="description" placeholder="Item description"  value="<?php echo set_value('description'); ?>"></textarea>
+        </div>
+        
+        <div class="form-group col-md-8 col-md-offset-2">
+            <label class="sr-only control-label" for="userfile">Upload picture</label>
+            <input class="form-control input-lg" type="file" name="userfile" size="100" placeholder="Upload a picture" />
         </div>
 
         <div class="form-group col-md-6 col-md-offset-3">

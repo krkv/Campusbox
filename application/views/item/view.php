@@ -5,10 +5,14 @@
         <h1>
             <?php echo $selected_item->title; ?>
         </h1>
-
+        
+        <?php if ($selected_item->image): ?>
+        
         <p>
-            <img src="<?php echo base_url('images/item.png') ?>" class="img-responsive img-item">
+            <img src="<?php echo base_url('uploads/'.$selected_item->image) ?>" class="img-responsive img-item">
         </p>
+        
+        <?php endif; ?>
 
         <p>
             <?php echo $selected_item->description; ?>
