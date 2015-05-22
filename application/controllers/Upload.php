@@ -14,7 +14,7 @@ class Upload extends CI_Controller {
             redirect('login');
         } else {
             $config['upload_path'] = './uploads/';
-            $config['allowed_types'] = 'gif|jpg|png';
+            $config['allowed_types'] = 'gif|jpg|jpeg|png';
             $this->load->library('upload', $config);
             $this->load->library('form_validation');
             $this->form_validation->set_rules('title', 'Title', 'trim|required|max_length[100]');
@@ -22,10 +22,8 @@ class Upload extends CI_Controller {
             if ($this->form_validation->run() == FALSE) {
                 $this->load->view('header');
                 $this->load->view('item/add');
-            } elseif ($this->input->post('userfile') and $this->upload->do_upload() == FALSE) {
-                $this->load->view('header');
-                $this->load->view('item/add');
             } else {
+                $this->upload->do_upload();
                 $new_id = $this->item_model->add_new_item();
                 redirect('item/view/' . $new_id);
             }
