@@ -48,14 +48,9 @@ class Item extends CI_Controller {
             $request = uri_string();
             $this->session->set_userdata('request', $request);
             redirect('login');
-        }
-        $this->form_validation->set_rules('title', 'title', 'trim|required');
-        if ($this->form_validation->run() === FALSE) {
+        } else {
             $this->load->view('header');
             $this->load->view('item/add');
-        } else {
-            $this->item_model->add_new_item();
-            redirect('/');
         }
     }
 
