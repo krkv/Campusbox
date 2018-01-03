@@ -1,20 +1,18 @@
-        <div class="container">		    
-        
-            <hr>
+<div class="container">
+    <p class="text-center">
+        &copy; Campusbox 2015.
+        Server time is <span id="hours">0</span>:<span id="minutes">0</span>:<span id="seconds">0</span>.
+        There are <span id="items"><?php echo $number ?></span> items in Campusbox.
+    </p>
+</div>
 
-		    <footer>
-		        <p>&copy; Campusbox 2015. Campusbox is under development at University of Tartu.</p>
-		    </footer>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
-	    </div> <!-- /container -->
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="<?php echo base_url("js/bootstrap.js") ?>"></script>   
+<script src="<?php echo base_url("js/disable_button.js") ?>"></script>
+<script src="<?php echo base_url("js/campusbox.js") ?>"></script>
 
-
-	<!-- Bootstrap core JavaScript
-	================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
-	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-	<script src="/js/ie10-viewport-bug-workaround.js"></script>
-    </body>
+</body>
 </html>

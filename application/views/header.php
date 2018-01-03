@@ -1,82 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Campusbox</title>
+        <title>Campusbox</title>
 
-	<link href="/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/css/campusbox.css" rel="stylesheet">
+        <!-- Bootstrap -->
+        <link href="<?php echo base_url("css/bootstrap-paper.css") ?>" rel="stylesheet">
 
-    <script src="/js/campusbox.js"></script>
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
 
-	<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-	<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-	<script src="/js/ie-emulation-modes-warning.js"></script>
+        <link href="<?php echo base_url("css/campusbox.css") ?>" rel="stylesheet">
+        <link rel="icon" type="image/png" href="<?php echo base_url("images/favicon.ico") ?>">
+        
+        <!-- Google Analytics -->
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
-	</head>
+            ga('create', 'UA-61422129-1', 'auto');
+            ga('send', 'pageview');
+        </script>
 
-	<body>
+    </head>
+
+    <body>
 
         <nav class="navbar navbar-inverse navbar-fixed-top">		
-            
+
             <div class="container">		
-                
+
                 <div class="navbar-header">
-			        
+
+                    <a class="navbar-brand" href="<?php echo base_url(index_page()); ?>">Campusbox</a>
+
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-			            <span class="sr-only">Toggle navigation</span>
-			            <span class="icon-bar"></span>
-			            <span class="icon-bar"></span>
-			            <span class="icon-bar"></span>
-		            </button>
-			        
-                    <a class="navbar-brand" href="/">Campusbox</a>
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
 
-		        </div>
+                </div>
 
-		        <div id="navbar" class="navbar-collapse collapse">
-			    
-                    <form class="navbar-form navbar-left">
-			            <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></div>
-				                <input type="text" placeholder="Search" class="form-control">
-                            </div>
-			            </div>
-			        </form>
+                <div class="collapse navbar-collapse" id="navbar">
 
-                    <div class="navbar-form navbar-right">
+                    <?php echo form_open('item/search', array('class' => 'navbar-form navbar-left')) ?>
 
-                        <?php if ($this->session->userdata('user_id')): ?>
+                    <div class="form-group">
 
-                        <div class="form-group">
-			                <a class="btn btn-default" href="/index.php/users/logout" role="button">Log out</a>
+                        <div class="input-group">
+
+                            <label class="sr-only control-label" for="search">Search</label>
+                            <input type="text" id="search" name="search" placeholder="Search" class="form-control">                           
+
                         </div>
-
-                        <?php else: ?>
-
-                        <div class="form-group">
-			                <a class="btn btn-default" href="/index.php/users/add" role="button">Sign up</a>
-                        </div>
-
-                        <div class="form-group">
-			                <a class="btn btn-default" href="/index.php/users/login" role="button">Log in</a>
-                        </div>
-
-                        <?php endif; ?>
 
                     </div>
 
-		        </div><!--/.navbar-collapse -->
+                    <?php echo form_close(); ?>
 
-	        </div>
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <?php if ($this->session->userdata('user_id')): ?>
+
+                            <li>
+                                <a href="#" role="button">
+                                    <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+                                    Tartu
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="<?php echo site_url('user/view/' . $this->session->userdata('user_id')); ?>" role="button">
+                                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                    <?php echo $this->session->userdata('user_name'); ?>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="<?php echo site_url('logout'); ?>" role="button">
+                                    <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+                                    Log out
+                                </a>
+                            </li>
+
+                        <?php else: ?>
+
+                            <li>
+                                <a href="<?php echo site_url('signup'); ?>" role="button">
+                                    <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+                                    Sign up
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="<?php echo site_url('login'); ?>" role="button">
+                                    <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+                                    Log in
+                                </a>
+                            </li>
+
+                        <?php endif; ?>
+
+                    </ul>
+
+                </div><!--/.navbar-collapse -->
+
+            </div>
 
         </nav>

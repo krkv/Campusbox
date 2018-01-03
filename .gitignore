@@ -7,6 +7,6 @@ application/cache/*
 application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
-/web.config
-/application/config/database.php
-/application/config/config.php
+
+/vendor/
+/nbproject/
